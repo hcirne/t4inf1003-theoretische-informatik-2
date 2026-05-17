@@ -5,7 +5,7 @@
 # // This algorithm verifies if an input (string or a number) reads the same backwward as forward.
 # 
 # {
-#     word := str(input)
+#     word := str(input);
 #     l := len(word);
 #     for x := 0 to l // 2 do
 #     {
