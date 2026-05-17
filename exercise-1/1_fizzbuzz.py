@@ -9,6 +9,7 @@
 # {
 #     i := 1
 #     while i < 101 do
+#     (
 #         if (i % 3 = 0) AND (i % 5 = 0) then
 #         {
 #             write(i, "FizzBuzz")
@@ -23,9 +24,10 @@
 #         }
 #         else
 #         {
-#         write(i)
+#             write(i)
 #         }
 #         i := i + 1
+#     ) 
 # }
 
 def FizzBuzz():
