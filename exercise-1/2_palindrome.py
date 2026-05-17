@@ -7,7 +7,7 @@
 # {
 #     word := str(input)
 #     l := len(word);
-#     for x := 0 to len // 2 do
+#     for x := 0 to l // 2 do
 #     {
 #         if (word[x] =/ word[l - 1 -x]) then
 #         {
