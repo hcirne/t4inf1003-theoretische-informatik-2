@@ -7,7 +7,7 @@
 
 === Q1. The Factorial Countdown
 
-Below is the function #emph[recursive_factorial(n)] that takes an input _n_ and returns its factorial.
+*A:* Below is the function #emph[recursive_factorial(n)] that takes an input _n_ and returns its factorial.
 ```python
 def recursive_factorial(n):
     # the if statement indicates the base case
@@ -33,7 +33,7 @@ print(recursive_factorial(5))
 
 === Q2. Building the Fibonacci Sequence
 
-Below is the function #emph[loop_fibonnaci(n)] that returns a _list_ of the first _n_ Fibonacci numbers.
+*A:* Below is the function #emph[loop_fibonnaci(n)] that returns a _list_ of the first _n_ Fibonacci numbers.
 ```python
 def loop_fibonacci(n):
     if n <= 0:
@@ -68,8 +68,8 @@ print(loop_fibonacci(5))
 == Part 2: Core Theory
 === Q3. Spot the Bug!
 
-A student writes the following recursive function to print numbers from n down to 1. However,
-when they run countdown(3), the program crashes with a RecursionError.
+*A student writes the following recursive function to print numbers from n down to 1. However,
+when they run countdown(3), the program crashes with a RecursionError.*
 ```python
 def countdown(n):
     print(n)
@@ -101,7 +101,7 @@ countdown(3)
 # 2
 # 1
 ```
-=== Q4.The Memory Trade-Off
+=== Q4. The Memory Trade-Off
 *Explain why an iterative loop is generally more memory-efficient than a naive recursive function.
 Mention what happens to the computer's Call Stack during recursion.*
 
@@ -118,25 +118,40 @@ In extreme cases, the Call Stack can exceed its size limit causing a stack overf
 == Part 3: Real-World Logic Riddles
 === Q5. The Stacking Box Dillema
 
-*1. If you were writing a program to find the key, what is the recursive action you repeat over and over?*
-A: The recursive action would be to open the current box and continue searching inside the next smaller box.
+*1. If you were writing a program to find the key, what is the recursive action you repeat over and over?* \
+*A:* The recursive action would be to open the current box and continue repeatedly searching inside the next smaller box.
 
-*2. What is the base case that tells you to finally stop opening boxes?*
-A: Assuming that there's a golden key at the smallest, tiniest box, then the base case would be "when you find the key, stop".
+*2. What is the base case that tells you to finally stop opening boxes?* \
+*A:* Assuming that there's a golden key at the smallest, tiniest box, then the base case would be "when you find the key, stop".
 If there's no guarantee that there's a key inside the boxes, we can stop when we reach the smallest one (there's no other box inside it).
 
 === Q6. The 29th Day Puzzle
 
-A scientist places a single bacteria cell in a jar. This specific bacteria doubles its population
-every single minute. \
-At exactly 30 minutes, the jar is 100% full. \
+*A scientist places a single bacteria cell in a jar. This specific bacteria doubles its population
+every single minute.* \
+*At exactly 30 minutes, the jar is 100% full.* \
 *1. At what minute was the jar exactly half full?*
 
 *A:* The jar is exactly half full at 29 minutes.
 
 *2. Why does solving this problem require you to think "backward" like a recursive function?*
 
-Because the bacteria doubles every minute, we can reason backward from the know state.
+*A:* Because the bacteria doubles every minute, we can reason backward from the know state.
 If the jar is completely full at  30 minutes, then a minute earlier it was half full, since doubling the bacteria filled the jar.
 Continuing our backward chain of thought, the jar was a quarter full at 28 minutes, one-eight full at 27 minutes, and so on.
 Therefore, this backward reasoning is similar to recursion, where each state can be derived from the next following a repeated rule.
+
+=== Q7. The Echo in the Canyon
+
+*When you stand at the edge of a canyon and yell "Hello!", the sound waves hit the canyon walls
+and bounce back to your ears as an echo. The echo repeats: "Hello!"... "Hello!"... "Hello!"...
+getting quieter each time until it fades away completely.* \
+*1. If this canyon echo was a Python function, what represents the recursive call?*
+
+*A:* The recursive call would be each new echo produced when the sound reflects off the canyon and repeats itself.
+Each echo creates another one, although quieter.
+
+*2. What serves as nature's base case that stops the echo from repeating forever?*
+
+*A:* As mentioned before, each echo creates another quieter one. This repeats until the echo is to weak to produce another audible one.
+With this, the base case would be when the echo sound falls below a certain volume level and it's incapable of producing another audible one, so the echoing stops.
