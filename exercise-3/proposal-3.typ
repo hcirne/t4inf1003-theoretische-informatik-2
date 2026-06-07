@@ -125,4 +125,18 @@ A: The recursive action would be to open the current box and continue searching 
 A: Assuming that there's a golden key at the smallest, tiniest box, then the base case would be "when you find the key, stop".
 If there's no guarantee that there's a key inside the boxes, we can stop when we reach the smallest one (there's no other box inside it).
 
+=== Q6. The 29th Day Puzzle
 
+A scientist places a single bacteria cell in a jar. This specific bacteria doubles its population
+every single minute. \
+At exactly 30 minutes, the jar is 100% full. \
+*1. At what minute was the jar exactly half full?*
+
+*A:* The jar is exactly half full at 29 minutes.
+
+*2. Why does solving this problem require you to think "backward" like a recursive function?*
+
+Because the bacteria doubles every minute, we can reason backward from the know state.
+If the jar is completely full at  30 minutes, then a minute earlier it was half full, since doubling the bacteria filled the jar.
+Continuing our backward chain of thought, the jar was a quarter full at 28 minutes, one-eight full at 27 minutes, and so on.
+Therefore, this backward reasoning is similar to recursion, where each state can be derived from the next following a repeated rule.
