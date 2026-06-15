@@ -7,10 +7,8 @@ def linear_search(a, t):
     return -1
 
 a = [1,2,3,4,5,6,7,8,9,10]
+b = []
 
-print(linear_search(a, 2))
-print(linear_search(a, 4))
-print(linear_search(a, 5))
-print(linear_search(a, 9))
 print(linear_search(a, 10))
 print(linear_search(a, 11))
+print(linear_search(b, 0))
