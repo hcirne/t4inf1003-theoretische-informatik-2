@@ -12,3 +12,8 @@ b = []
 print(linear_search(a, 10))
 print(linear_search(a, 11))
 print(linear_search(b, 0))
+
+# Expected output
+# 9
+# -1
+# -1
