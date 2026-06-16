@@ -2,13 +2,13 @@
   paper: "a4",
 )
 
-= Assignment 4
+= Assignment 4 - Henrique Cirne
 
 == Part A: Conceptual & Logical Questions
 
 === Q1: The Locker Room Dilemma
 
-You are given a task to store the monthly sales data of a store for the past 5 years (split by month). \
+*You are given a task to store the monthly sales data of a store for the past 5 years (split by month).* \
 *1. Would you use a 1D array or a 2D array to store this data? Explain why.* \
 
 *A:* I would use a 2D array to store this data because we have two categories (years and months).
@@ -34,7 +34,7 @@ The table below is a visual representation of the 2D array.
 
 === Q2: The Efficiency Showdown
 
-You have an unsorted list of 1,000,000 phone numbers. You need to find if "John Doe" is in the list.
+*You have an unsorted list of 1,000,000 phone numbers. You need to find if "John Doe" is in the list.*
 *1. Can you use Binary Search right away? Why or why not?*
 
 *A:* Binary Search is a searching algorithm that operates on sorted lists, repeatedly splitting the search space in half to find a match.
@@ -49,7 +49,7 @@ This happens if "John Doe" is the last entry in the list or if "John Doe" is not
 
 === Q3: The Shifting Problem
 
-Why does deleting an element from the middle of an array take longer (O(n) time) than deleting an element from the very end of an array (O(1) time)? Use a simple analogy to explain.
+*Why does deleting an element from the middle of an array take longer (O(n) time) than deleting an element from the very end of an array (O(1) time)? Use a simple analogy to explain.*
 
 *A:* Let's imagine that we have people standing in a queue. If the person at the end of the queue decides to leave, the rest of the queue remains unchanged.
 However, if a person in the middle leaves, everyone behind them has to move forward to close the gap.
@@ -58,7 +58,7 @@ On the other hand, deleting an element from the middle requires shifting all sub
 
 === Q4: Time Complexity Check
 
-Fill in the blanks with the correct Worst-Case Time Complexity (O(1), O(n), O(\log n), or O(n^2)):
+*Fill in the blanks with the correct Worst-Case Time Complexity (O(1), O(n), O(\log n), or O(n^2)):*
 - *Accessing a primitive integer:* O(1)
 - *Searching for an item using Binary Search:* O(log n)
 - *Traversing a 1D array of size n:* O(n)
