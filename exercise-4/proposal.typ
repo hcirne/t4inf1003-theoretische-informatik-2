@@ -32,4 +32,17 @@ The table below is a visual representation of the 2D array.
   [Year 5], [], [], [], [],
 )
 
+=== Q2: The Efficiency Showdown
 
+You have an unsorted list of 1,000,000 phone numbers. You need to find if "John Doe" is in the list.
+*1. Can you use Binary Search right away? Why or why not?*
+
+*A:* Binary Search is a searching algorithm that operates on sorted lists, repeatedly splitting the search space in half to find a match.
+Therefore, the answer is no. We cannot use Binary Search because it requires the list to be sorted.
+Since the problem states that the list is *unsorted*, the algorithm cannot correctly eliminate half of the remaining elements at each step.
+
+*2. If you use Linear Search, what is the worst-case scenario for how many numbers you will have to check?*
+
+*A:* Linear Search is a searching algorithm that sequently checks each element of a given list until it finds a match or the whole list has been searched through.
+Knowing this, the worst-case scenario happens when we must examine all 1,000,000 contacts in the list.
+This happens if "John Doe" is the last entry in the list or if "John Doe" is not present in the list at all.
