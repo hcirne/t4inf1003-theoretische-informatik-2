@@ -158,6 +158,11 @@ print(findLCA(None, Node(1), Node(2)))
 
 *Q5.* Dijkstra's algorithm is guaranteed to work on graphs with non-negative edge weights.
 1. Sketch a simple 3-node directed graph with one negative edge where Dijkstra's algorithm fails to find the correct shortest path.
+
+#figure(
+  image("q5.png", fit: "contain", width: 200pt),
+)
+
 2. Trace the algorithm step-by-step on your sketch to prove why it fails.
 
 *Q6.* What is the time complexity of Dijkstra’s algorithm when implemented using:
