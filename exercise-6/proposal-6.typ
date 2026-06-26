@@ -157,19 +157,55 @@ print(findLCA(None, Node(1), Node(2)))
 === Logical & Conceptual Questions
 
 *Q5.* Dijkstra's algorithm is guaranteed to work on graphs with non-negative edge weights.
-1. Sketch a simple 3-node directed graph with one negative edge where Dijkstra's algorithm fails to find the correct shortest path.
+*1.* Sketch a simple 3-node directed graph with one negative edge where Dijkstra's algorithm fails to find the correct shortest path.
 
 #figure(
   image("q5.png", fit: "contain", width: 200pt),
 )
 
-2. Trace the algorithm step-by-step on your sketch to prove why it fails.
+*2.* Trace the algorithm step-by-step on your sketch to prove why it fails.
 
-*Q6.* What is the time complexity of Dijkstra’s algorithm when implemented using:
-1. An unsorted array/list to find the minimum distance vertex?
-2. A Min-Heap (Binary Heap)?
+*A:* Let's assume we would like to go from _Node A_ to _Node C_. \
+From a step-by-step trace of Dijkstra's algorithm, we get:
+
+The initial distances are the following: \
+A: 0 \
+B: #sym.infinity \
+C: #sym.infinity \
+
+We start from _A_ so we now consider all unvisited neighbor nodes.
+Computing the distance to each neighbor, we get: \
+A: 0 (visited) \
+A -> B: 10 \
+A -> C: 5 \
+
+From _A_, Dijkstra selects _C_ first since it has the smallest tentative distance: \
+A: 0 (visited) \
+A -> C: 5 (visited) \
+
+After that, Dijkstra evaluates the other unvisited node _B_: \
+A -> B: 10 (visited) \
+B -> C: (-9) \
+
+So now we get that A -> B -> C amounts to $10 + (-9) = 1$. We discovered a better path to _C_ through _B_ since $1 < 5$.
+However, Dijkstra's algorithm marks nodes as visited and never evaluates them again. This means that the path to _C_ won't get updated, even though it found a better, shorter one.
+
+#pagebreak()
+
+*Q6.* What is the time complexity of Dijkstra’s algorithm when implemented using: \
+*1.* An unsorted array/list to find the minimum distance vertex?
+
+*A:* When using an unsorted array/list, the time complexity is $O(V^2 + E) #sym.approx O(V^2)$.
+
+*2.* A Min-Heap (Binary Heap)?
+
+*A:* When using a min-head (binary heap), the time complexity is $O((V + E) log V)$.
+
 State your answers in terms of vertices (V) and edges (E). Under what graph density
 condition is the array implementation preferred over the heap implementation?
+
+*A:* When the graph is very dense (very high edge count), we get that $E #sym.approx V^2$. With this, the time complexity for the
+array becomes $O(V^2)$ and for the heap $O(V^2 log(V))$. Therefore, the array is preferred because it avoids the extra $log(V)$ factor.
 
 *Q7.* You are given a network of n nodes, labeled from 1 to n. You are also given times, a list of
 directed travel times where times[i] = (ui, vi, wi).
