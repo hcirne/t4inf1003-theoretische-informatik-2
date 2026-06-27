@@ -29,7 +29,7 @@ sequences could not be the sequence of nodes examined? Explain why.
 Therefore, every subsequent node must be greater than _40_ since they are in the right subtree of _40_.
 
 The next nodes are _55_, then _38_. Well, _38 < 40_ so it cannot be in the right subtree of _40_.
-This goes against the binary search tree propery, making the sequence impossible.
+This goes against the binary search tree property, making the sequence impossible.
 
 #figure(
   image("q2.png", fit: "contain", width: 200pt),
@@ -156,7 +156,7 @@ print(findLCA(None, Node(1), Node(2)))
 
 === Logical & Conceptual Questions
 
-*Q5.* Dijkstra's algorithm is guaranteed to work on graphs with non-negative edge weights.
+*Q5.* Dijkstra's algorithm is guaranteed to work on graphs with non-negative edge weights. \
 *1.* Sketch a simple 3-node directed graph with one negative edge where Dijkstra's algorithm fails to find the correct shortest path.
 
 #figure(
@@ -212,3 +212,39 @@ directed travel times where times[i] = (ui, vi, wi).
 Write a function to find the minimum time it takes for a signal sent from a given source node k to
 reach all nodes. If it is impossible for all nodes to receive the signal, return -1.
 Requirement: Use an adjacency list representation and an efficient priority queue (Min-Heap).
+
+```python
+from collections import defaultdict
+import heapq
+
+def network_delay_time(times, n, k):
+    # adjacency list
+    adj = defaultdict(list)
+
+    for u, v , w in times:
+        adj[u].append((v, w))
+
+    min_times = {}
+    min_heap = [(0, k)] # (cost to node, node)
+
+    while min_heap:
+        cost_to_node, node = heapq.heappop(min_heap)
+
+        if node in min_times:
+            continue
+
+        min_times[node] = cost_to_node
+
+        for nn, nnc in adj[node]:
+            if nn not in min_times:
+                heapq.heappush(min_heap, (cost_to_node + nnc, nn))
+
+    if len(min_times) == n:
+        return max(min_times.values())
+    else:
+        return -1
+
+print(network_delay_time([[2,1,1],[2,3,1],[3,4,1]], 4, 2)) # Expected output: 2
+print(network_delay_time([[1,2,1]], 2, 1)) # Expected output: 1
+print(network_delay_time([[1,2,1]], 2, 2)) # Expected output: -1
+```
