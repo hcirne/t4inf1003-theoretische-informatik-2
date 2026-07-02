@@ -138,9 +138,35 @@ specific value X from a Singly Linked List. Handle the case where the node to be
 head.*
 
 *A:*
+```python
+def deleteNode(head, X):
+    if head is None:
+        return head
+
+    # delete head
+    if head.value == X:
+        return head.next
+
+    # delete mid linked list
+    prev = head
+    current = head.next
+    while current is not None:
+        if current.value == X:
+            prev.next = current.next
+            return head
+        prev = current
+        current = current.next
+
+    return head
+```
 
 *Q10. (Binary Search Tree - BST) Given the sequence of numbers: [45, 23, 65, 12, 32, 54, 78].*
 1. Sketch the Binary Search Tree resulting from inserting these numbers in order.
+
+#figure(
+  image("pt-10_1-theoretical-info.png", fit: "contain", width: 200pt),
+)
+
 2. What is the time complexity of searching for an element in a perfectly balanced BST vs a worst-case skewed BST?
 
 *A:* The worst-case skewed BST is a BST where the height = $n$, having a time complexity of $O(n)$.
@@ -148,12 +174,20 @@ In a perfectly balanced BST, the time complexity is $#sym.approx O(log n)$.
 
 == SECTION C: Advanced Tracing & Algorithms (30 Marks)
 
-*Q11. (Dijkstra’s Algorithm Tracing)*
+*Q11. (Dijkstra’s Algorithm Tracing)* \
 Trace Dijkstra's shortest path algorithm from source vertex A for the following undirected graph.
 List the shortest distance from A to all other vertices at the end.
 - Edges: (A-B, wt=4), (A-C, wt=2), (B-C, wt=1), (B-D, wt=5), (C-D, wt=8).
 
-*A:*
+#table(
+  columns: 6,
+  table.header([Step], [Vertex Finalized], [dist[A]], [dist[B]], [dist[C]], [dist[D]]),
+  [1], [—], [0], [$infinity$], [$infinity$], [$infinity$],
+  [2], [A], [0], [4], [2], [$infinity$],
+  [3], [C], [0], [3], [2], [10],
+  [4], [B], [0], [3], [2], [8],
+  [5], [D], [0], [3], [2], [8],
+)
 
 *Q12. (Loops & Time Complexity Analysis)*
 Analyze the total time complexity (Big-O) of the following code block. Explain your math clearly.
