@@ -79,13 +79,59 @@ B, C) and edges: A \to B, B \to C, C \to A, and B \to B (self-loop).*
 *Q7. (Algorithm Design & Insertion Sort) Write the pseudocode for Insertion Sort to sort an
 array of integers in ascending order.*
 
-*A:*
+```
+function insertionSort(array)
+    for i = 1 to n-1
+      key = array[i]
+      j = i - 1
+
+      while j >= 0 and array[j] > key
+        array[j+1] = array[j]
+        j = j - 1
+      array[j+1] = key
+```
 
 *Q8. (Tower of Hanoi Logic) Trace the exact sequence of disk movements required to solve the
 Tower of Hanoi problem for N = 3 disks from Source pole (A) to Destination pole (C) using an
 Auxiliary pole (B).*
 
-*A:*
+*A:* Let's assume we have S (small disk), M (medium disk) and L (large disk).
+The tracing happens as follows:
+
+1. S from A -> C
+  - A: M - L
+  - B: empty
+  - C: S
+
+2. M from A -> B
+  - A: L
+  - B: M
+  - C: S
+
+3. S from C -> B
+  - A: L
+  - B: S - M
+  - C empty
+
+4. L from A -> C
+  - A: empty
+  - B: S - M
+  - C: L
+
+5. S from B -> A
+  - a: S
+  - b: M
+  - c: L
+
+6. M from B -> C
+  - a: S
+  - b: empty
+  - c: M - L
+
+7. S from A -> C
+  - A: empty
+  - B: empty
+  - C: S - M - L
 
 *Q9. (Linked List Operations) Write pseudocode or a Python function to delete a node with a
 specific value X from a Singly Linked List. Handle the case where the node to be deleted is the
