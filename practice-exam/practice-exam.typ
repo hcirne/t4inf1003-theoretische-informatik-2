@@ -120,3 +120,9 @@ def complex_loops(n):
     print("World")
     k = k * 3
 ```
+
+The code block is contains two loops: a nested loop and _while_ loop:
+- For the nested loop, the outside loop runs $n$ times. For each, the inner loop runs $n$ times as well. With this, we get that $n dot n$ = $O(n^2)$.
+- For the _while_ loop, $k = 1$ tripling per iteration until $k >= n$. Therefore, it runs $~log_3(n)$ times.
+
+Combining them, we have that the total = $O(n^2 + log n)$. Since $n^2$ grows much faster, the final complexity is $O(n^2)$.
