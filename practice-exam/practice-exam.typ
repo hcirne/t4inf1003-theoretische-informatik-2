@@ -59,6 +59,8 @@ linear queue implemented using a fixed-size array.*
 with the last, forming a circle. This allows to efficiently use memory by reusing spaces freed after elements are
 dequeued. It follows the FIFO (First In First Out) method, meaning that the element inserted first is removed first.
 
+#pagebreak()
+
 *Q6. (Graph Representation) Draw the Adjacency Matrix for a directed graph with 3 vertices (A,
 B, C) and edges: A \to B, B \to C, C \to A, and B \to B (self-loop).*
 
@@ -93,8 +95,10 @@ head.*
 
 *Q10. (Binary Search Tree - BST) Given the sequence of numbers: [45, 23, 65, 12, 32, 54, 78].*
 1. Sketch the Binary Search Tree resulting from inserting these numbers in order.
-2. What is the time complexity of searching for an element in a perfectly balanced BST vs a
-worst-case skewed BST?
+2. What is the time complexity of searching for an element in a perfectly balanced BST vs a worst-case skewed BST?
+
+*A:* The worst-case skewed BST is a BST where the height = $n$, having a time complexity of $O(n)$.
+In a perfectly balanced BST, the time complexity is $#sym.approx O(log n)$.
 
 == SECTION C: Advanced Tracing & Algorithms (30 Marks)
 
